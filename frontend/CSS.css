@@ -1,0 +1,278 @@
+:root {
+    --primary: #f8ad21;
+    --primary-dark: #5c5600;
+    --secondary: #FF9800;
+    --text: #333;
+    --light: #f9f9f9;
+    --gray: #e0e0e0;
+    --white: #ffffff;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+@font-face {
+  font-family: "MiFuente";
+  src: url("fonts/MiFuente.ttf") format("truetype");
+}
+
+body {
+    background-color: var(--white);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Estilos para pantallas de cel */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}
+
+/* Pantalla login */
+.login-screen, .home-screen .food-detail-screen {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+
+.login-screen {
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+.app-logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.app-logo img {
+    width: 250px;
+    height: auto;
+}
+
+h1 {
+    color: var(--text);
+    text-align: center;
+    margin-bottom: 0px;
+     font-family: "MiFuente", Verdana;
+     font-size: 42px;
+     
+}
+h4 {
+
+    color: var(--text);
+    margin-bottom: 0px;
+    font-size: 22px;
+     
+}
+
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Pantalla de inicio */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;  
+    gap: 10px;               
+    line-height: 2;  
+    
+}
+
+.navbar button {
+    width: auto;
+    padding: 8px 15px;
+}
+
+.today-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+   
+  
+}
+
+.stat-card {
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.stat-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.stat-goal {
+    font-size: 14px;
+    color: #666;
+}
+
+.tab-container {
+    margin-top: 20px;
+}
+
+.tab-buttons {
+    display: flex;
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 15px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.tab-button.active {
+    border-bottom: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.food-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+}
+
+.food-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.food-info h4 {
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.food-macros {
+    display: flex;
+    font-size: 12px;
+    color: #666;
+}
+
+.food-macros span {
+    margin-right: 10px;
+}
+
+/* Pantalla detalle alimento */
+
+.food-header {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.food-header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.nutri-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #000000;
+}
+
+.nutri-table th, .nutri-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--gray);
+}
+
+.nutri-table th {
+    background-color: var(--primary);
+    font-weight: 600;
+}
+
+.nutri-table tr:last-child td {
+    border-bottom: none;
+}
+
+.back-button {
+    margin-bottom: 20px;
+    background-color: var(--gray);
+    color: var(--text);
+}
+
+.back-button:hover {
+    background-color: #ccc;
+}
+
+/* Clases para mostrar/ocultar pantallas */
+.hidden {
+    display: none;
+}
+
+

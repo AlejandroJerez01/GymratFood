@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymratFood App</title>
+    <link rel="stylesheet" href="CSS.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Federant&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <!-- Pantalla de Login--> 
+        <div class="login-screen" id="loginScreen">
+            <div class="app-logo">
+                <img src="img/logo.png" alt="Logo Gymrat" />
+                <input type="email" placeholder="Correo electrónico" id="email">
+                <input type="password" placeholder="Contraseña" id="password">
+                <button id="loginButton">Iniciar sesión</button>
+            </div>
+        </div> 
+        
+        <!-- Pantalla de Inicio -->
+        <div class="home-screen hidden" id="homeScreen">
+            <div class="navbar">
+                <h1>GymratFood</h1> 
+                <button id="logoutButton">Salir</button>
+            </div>
+
+            <div class="today-stats">
+                <div class="stat-card">
+                    <h3>Calorías</h3>
+                    <div class="stat-value">1,200</div>
+                    <div class="stat-goal">Meta: 1,800 kcal</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Proteínas</h3>
+                    <div class="stat-value">65g</div>
+                    <div class="stat-goal">Meta: 100g</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Carbohidratos</h3>
+                    <div class="stat-value">150g</div>
+                    <div class="stat-goal">Meta: 200g</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Grasas</h3>
+                    <div class="stat-value">40g</div>
+                    <div class="stat-goal">Meta: 50g</div>
+                </div>
+            </div>
+
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="foods">Alimentos</button>
+                    <button class="tab-button" data-tab="recipes">Recetas Fit</button>
+                </div>
+
+                <!-- 🧩 Contenedor dinámico de alimentos -->
+                <div class="tab-content active" id="foodsTab">
+                    <div id="productsContainer" class="products-container"></div>
+                </div>
+
+                <!-- Recetas fijas -->
+                <div class="tab-content" id="recipesTab">
+                    <div class="food-card">
+                        <img src="https://placehold.co/300x200" alt="Batido proteico verde con espinaca y plátano" />
+                        <div class="food-info">
+                            <h4>Batido Proteico Verde</h4>
+                            <div class="food-macros">
+                                <span>280 kcal</span>
+                                <span>30g P</span>
+                                <span>25g C</span>
+                                <span>5g G</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="food-card">
+                        <img src="https://placehold.co/300x200" alt="Ensalada fría" />
+                        <div class="food-info">
+                            <h4>Ensalada fría</h4>
+                            <div class="food-macros">
+                                <span>420 kcal</span>
+                                <span>18g P</span>
+                                <span>50g C</span>
+                                <span>15g G</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pantalla detalle alimento -->
+        <div class="food-detail-screen hidden" id="foodDetailScreen">
+            <button class="back-button" id="backButton">← Volver</button>
+            
+            <div class="food-header">
+                <img src="img/huevo.png" alt="Huevo cocido" id="detailFoodImage" />
+                <div>
+                    <h4 id="detailFoodTitle">Huevo cocido</h4>
+                    <div class="food-macros">
+                        <span id="detailFoodCalories">180 kcal</span>
+                        <span id="detailFoodProtein">26g Proteínas</span>
+                        <span id="detailFoodCarbs">0g Carbos</span>
+                        <span id="detailFoodFat">5g Grasas</span>
+                    </div>
+                </div>
+            </div>
+
+            <table class="nutri-table">
+                <thead>
+                    <tr>
+                        <th>Nutriente</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Calorías</td><td>180</td></tr>
+                    <tr><td>Proteínas</td><td>26g</td></tr>
+                    <tr><td>Carbohidratos</td><td>0g</td></tr>
+                    <tr><td>Grasas</td><td>5g</td></tr>
+                    <tr><td>Grasas saturadas</td><td>1.2g</td></tr>
+                    <tr><td>Colesterol</td><td>70mg</td></tr>
+                    <tr><td>Sodio</td><td>80mg</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="JS.js"></script>
+</body>
+</html>
